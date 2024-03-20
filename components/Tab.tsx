@@ -11,7 +11,7 @@ import Market from "./Market";
 export function TabsDefault() {
   return (
     <Tabs value="discussion">
-      <TabsHeader className="w-full bg-[#13294f]">
+      <TabsHeader className="w-full bg-[#13294f]" placeholder="discussion">
         <Tab value={"discussion"}>Discussion</Tab>
         <Tab value={"market"}>Market Stories</Tab>
       </TabsHeader>
