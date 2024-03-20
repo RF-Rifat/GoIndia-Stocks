@@ -18,6 +18,7 @@ interface NavItem {
   href: string;
   icon: JSX.Element;
 }
+
 export function SideNav({ sideBarOpen, setSideBarOpen }) {
   const navigationItems: NavItem[] = [
     { label: "Discussion Form", href: "/", icon: <BiSolidMessageDetail /> },
@@ -37,7 +38,7 @@ export function SideNav({ sideBarOpen, setSideBarOpen }) {
   return (
     <aside
       className={`${
-        sideBarOpen ? "translate-x-0" : "-translate-x-80"
+        sideBarOpen ? "translate-x-0 z-30" : "-translate-x-80"
       } "fixed inset-0 z-50 h-fit overflow-y-auto w-72 transition-transform duration-100 xl:translate-x-0 shadow-md shadow-blue-gray-500/5 dark:bg-dark"`}
     >
       <nav className="bg-[#13294f] relative h-screen top-0 left-0 py-6 font-[sans-serif]">
