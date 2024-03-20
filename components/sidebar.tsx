@@ -19,7 +19,7 @@ interface NavItem {
   icon: JSX.Element;
 }
 
-export function SideNav({ sideBarOpen, setSideBarOpen }) {
+export function SideNav({ sideBarOpen }: any) {
   const navigationItems: NavItem[] = [
     { label: "Discussion Form", href: "/", icon: <BiSolidMessageDetail /> },
     { label: "Audience", href: "/audience", icon: <BiSolidMessageDetail /> },
