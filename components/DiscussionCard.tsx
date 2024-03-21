@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { GrFavorite } from "react-icons/gr";
 import { FaRegMessage } from "react-icons/fa6";
-import { Button } from "@material-tailwind/react";
+import { Chip } from "@material-tailwind/react";
 import { FiEye } from "react-icons/fi";
 import { FiShare2 } from "react-icons/fi";
 const DiscussionCard = () => {
@@ -21,22 +21,20 @@ const DiscussionCard = () => {
           </a>
           <div>
             <h3 className="font-medium sm:text-lg flex gap-6">
-              <div>Lorem ipsum dolor sit amet.</div> {/* @ts-ignore*/}
-              <Button
-                variant="gradient"
-                size="sm"
+              <div>Lorem ipsum dolor sit amet.</div>
+              {/* @ts-ignore*/}
+              <Chip
                 color="blue"
-                className="rounded-full"
-              >
-                sector 3
-              </Button>
+                size="sm"
+                className="rounded-full hidden sm:block"
+                value="sector 3"
+              />
             </h3>
             <p className="line-clamp-2 text-sm text-gray-700">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus, accusantium temporibus iure delectus ut totam natus
-              nesciunt ex? Ducimus, enim.
+              Accusamus, accusantium temporibus iure delectus.
             </p>
-            <div className="mt-2 sm:flex sm:items-center sm:gap-2 space-x-6">
+            <div className="mt-2 grid grid-flow-col sm:gap-2 lg:space-x-6">
               <div className="flex items-center gap-2">
                 <GrFavorite />
                 <p>2k</p>

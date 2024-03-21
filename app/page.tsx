@@ -10,7 +10,7 @@ import { TabsDefault } from "@/components/Tab";
 export default function Home() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
   return (
-    <div className="flex">
+    <div className="grid grid-flow-col">
       <div className={`absolute lg:hidden ${sideBarOpen && "z-40"}`}>
         <Sidebar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
       </div>
