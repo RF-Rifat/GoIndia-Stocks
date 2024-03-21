@@ -8,7 +8,7 @@ const DiscussionCard = () => {
   return (
     <>
       {" "}
-      <article className="rounded-xl border-2 border-gray-100 bg-white shadow-xl h-44 relative">
+      <article className="rounded-xl border-2 border-gray-100 bg-white shadow-xl relative">
         <div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
           <a href="#" className="block shrink-0">
             <Image
@@ -57,7 +57,7 @@ const DiscussionCard = () => {
           </div>
         </div>
         <div className="absolute text-blue-600 top-6 right-6 font-bold">
-         2 min ago
+          2 min ago
         </div>
       </article>
     </>
