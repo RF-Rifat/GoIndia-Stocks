@@ -24,7 +24,7 @@ export default function Home() {
       </div>
 
       {/*           Discussion   form       */}
-      <div className="hidden lg:flex gap-8">
+      <div className="hidden lg:flex gap-8 px-6">
         <DiscussionForm />
         <Market />
       </div>
