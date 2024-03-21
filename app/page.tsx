@@ -8,7 +8,7 @@ import MarketCard from "@/components/MarketCard";
 import Market from "@/components/Market";
 import { TabsDefault } from "@/components/Tab";
 export default function Home() {
-  const [sideBarOpen, setSideBarOpen] = useState(false);
+  const [sideBarOpen, setSideBarOpen] = useState(true);
   return (
     <div className="flex">
       <div className={`absolute lg:hidden ${sideBarOpen && "z-40"}`}>

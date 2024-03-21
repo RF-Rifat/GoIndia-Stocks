@@ -1,8 +1,14 @@
 "use client";
 import { IoHome } from "react-icons/io5";
-import { Button, IconButton, Typography } from "@material-tailwind/react";
+import {
+  Badge,
+  Button,
+  IconButton,
+  Typography,
+} from "@material-tailwind/react";
 import { AiOutlineTransaction } from "react-icons/ai";
 import { FaLightbulb } from "react-icons/fa";
+import { AiOutlineDollarCircle } from "react-icons/ai";
 import Link from "next/link";
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -12,6 +18,7 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { IoNotifications } from "react-icons/io5";
 import { BiSolidMessageDetail } from "react-icons/bi";
 import { MdArrowDropDown } from "react-icons/md";
+import { useState } from "react";
 
 interface NavItem {
   label: string;
@@ -20,9 +27,9 @@ interface NavItem {
 }
 
 export function SideNav({ sideBarOpen }: any) {
+  const [dropdown, setDropdown] = useState(Boolean);
   const navigationItems: NavItem[] = [
-    { label: "Discussion Form", href: "/", icon: <BiSolidMessageDetail /> },
-    { label: "Audience", href: "/audience", icon: <BiSolidMessageDetail /> },
+    { label: "Audience", href: "/audience", icon: <AiOutlineDollarCircle /> },
     { label: "Posts", href: "/posts", icon: <BiSolidMessageDetail /> },
     { label: "Schedules", href: "/schedules", icon: <BiSolidMessageDetail /> },
     { label: "Promote", href: "/promote", icon: <BiSolidMessageDetail /> },
@@ -49,23 +56,40 @@ export function SideNav({ sideBarOpen }: any) {
                 <FaUser className="w-8 h-8 text-white" />
                 <span className="text-white items-center"> Hello User</span>
               </div>
-              <IoNotifications className="w-8 h-8 text-white" />
+              <Badge color="red">
+                <IoNotifications className="w-8 h-8 text-white" />
+              </Badge>
             </div>
           </Link>
         </div>
         <div className="overflow-auto py-6 mt-4">
-          <ul className="space-y-1">
-            {navigationItems.map((item) => (
-              <li key={item.label}>
-                <Link href={item.href}>
-                  <div className="text-white hover:text-white text-[15px] flex items-center hover:bg-[#0d0d2b] px-4 py-3 transition-all gap-2 text-lg">
-                    <span>{item.icon}</span>
-                    <span>{item.label}</span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="space-y-1">
+            <li onClick={() => setDropdown(!dropdown)}>
+              <div className="text-white hover:text-white text-[15px] flex items-center hover:bg-[#0d0d2b] px-4 py-3 transition-all gap-2 text-lg">
+                <span>
+                  <BiSolidMessageDetail />
+                </span>
+                <span>Discussion Form</span>
+                <BiSolidRightArrow
+                  className={`size-3 ml-10 ${
+                    dropdown ? "rotate-0" : "rotate-90"
+                  } duration-200`}
+                />
+              </div>
+            </li>
+            <ul className={`${dropdown ? "hidden" : "block"} duration-200`}>
+              {navigationItems.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href}>
+                    <div className="text-white hover:text-white text-[15px] flex items-center hover:bg-[#0d0d2b] px-8 py-3 transition-all gap-2 text-lg">
+                      <span>{item.icon}</span>
+                      <span>{item.label}</span>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
     </aside>
